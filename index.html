@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SiteSimple | Modern Websites for Australian Small Business</title>
+  <meta name="description" content="SiteSimple redesigns outdated websites into modern, mobile-ready business sites for a simple $29/month." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"]
+          },
+          colors: {
+            ink: "#070B14",
+            panel: "#0E1526",
+            panelSoft: "#131D34",
+            borderSoft: "#273352",
+            brand: "#27C2FF",
+            brandDeep: "#0D87D1",
+            mint: "#38E8B6"
+          },
+          boxShadow: {
+            float: "0 20px 50px rgba(5, 10, 20, 0.48)",
+            glow: "0 0 0 1px rgba(39,194,255,0.25), 0 16px 40px rgba(13,135,209,0.35)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(circle at 85% -10%, rgba(39, 194, 255, 0.2), transparent 35%),
+        radial-gradient(circle at 5% 10%, rgba(56, 232, 182, 0.11), transparent 30%),
+        #070b14;
+    }
+    .glass {
+      background: linear-gradient(145deg, rgba(19, 29, 52, 0.75), rgba(12, 20, 38, 0.88));
+      backdrop-filter: blur(6px);
+    }
+    .grain::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image: radial-gradient(rgba(255,255,255,0.08) 0.5px, transparent 0.5px);
+      background-size: 3px 3px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5));
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .lift {
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(8, 14, 25, 0.55);
+      border-color: rgba(39, 194, 255, 0.55);
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-100 antialiased overflow-x-hidden">
+  <header class="sticky top-0 z-40 border-b border-borderSoft/60 bg-ink/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="/sitesimple-icon.png" alt="SiteSimple" class="h-10 w-10 rounded-xl shadow-glow">
+        <span class="text-xl font-bold tracking-tight">SiteSimple</span>
+      </a>
+      <a href="/signup.html" class="rounded-lg border border-brand/70 bg-brand/20 px-4 py-2 text-sm font-semibold text-brand transition hover:bg-brand/30">Sign up</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pt-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="reveal">
+          <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-mint/35 bg-mint/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-mint">
+            Built for local business owners
+          </p>
+          <h1 class="text-5xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
+            Upgrade your website from outdated to <span class="text-mint">outstanding.</span>
+          </h1>
+          <p class="mx-auto mt-6 max-w-xl text-base text-slate-300 sm:text-lg">
+            SiteSimple redesigns old websites into clean, modern, mobile-ready experiences that look professional and convert better.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a href="/signup.html" class="rounded-xl bg-gradient-to-r from-brand to-brandDeep px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:brightness-110">Start your redesign</a>
+          </div>
+          <div class="mt-8 flex items-center justify-center gap-7 text-sm text-slate-300">
+            <div><span class="text-2xl font-bold text-mint">$29</span><span class="ml-1">/month</span></div>
+            <div class="h-6 w-px bg-borderSoft"></div>
+            <div>Hosting, support, and updates included</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare" class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal mb-14 text-center">
+          <h2 class="text-3xl font-bold sm:text-4xl">See the quality for yourself</h2>
+          <p class="mt-3 text-slate-300">Real sites we've built for real businesses. Every one is custom — no templates, no shortcuts.</p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2">
+          <article class="reveal group overflow-hidden rounded-2xl border border-borderSoft bg-panel shadow-float transition hover:border-mint/40">
+            <div class="overflow-hidden">
+              <img src="/portfolio/asp.png" alt="Sports performance website" class="w-full transition duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-5">
+              <p class="text-xs font-semibold uppercase tracking-wide text-mint">Sports & Fitness</p>
+              <p class="mt-1 text-sm text-slate-300">High-energy dark theme with bold typography, designed to match the intensity of the brand.</p>
+            </div>
+          </article>
+
+          <article class="reveal group overflow-hidden rounded-2xl border border-borderSoft bg-panel shadow-float transition hover:border-mint/40">
+            <div class="overflow-hidden">
+              <img src="/portfolio/finlay.png" alt="Plumbing business website" class="w-full transition duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-5">
+              <p class="text-xs font-semibold uppercase tracking-wide text-mint">Trades & Services</p>
+              <p class="mt-1 text-sm text-slate-300">Clean, trust-focused layout with clear service areas and strong calls to action.</p>
+            </div>
+          </article>
+
+          <article class="reveal group overflow-hidden rounded-2xl border border-borderSoft bg-panel shadow-float transition hover:border-mint/40">
+            <div class="overflow-hidden">
+              <img src="/portfolio/bodydexafit.png" alt="Body scanning business website" class="w-full transition duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-5">
+              <p class="text-xs font-semibold uppercase tracking-wide text-mint">Health & Wellness</p>
+              <p class="mt-1 text-sm text-slate-300">Modern, professional design that builds credibility and drives bookings.</p>
+            </div>
+          </article>
+
+          <article class="reveal group overflow-hidden rounded-2xl border border-borderSoft bg-panel shadow-float transition hover:border-mint/40">
+            <div class="overflow-hidden">
+              <img src="/portfolio/templestowe.png" alt="Local plumbing website" class="w-full transition duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-5">
+              <p class="text-xs font-semibold uppercase tracking-wide text-mint">Local Services</p>
+              <p class="mt-1 text-sm text-slate-300">Suburb-focused design with emergency contact prominence and service breakdowns.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div class="reveal">
+          <h2 class="text-3xl font-bold sm:text-4xl">Simple pricing</h2>
+          <p class="mt-3 text-slate-300">One predictable monthly fee for a modern site, hosting, updates, and support.</p>
+          <ul class="mt-6 space-y-3 text-slate-200">
+            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-mint"></span> Custom redesign aligned to your business goals</li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-mint"></span> Mobile-first layout and performance optimization</li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-mint"></span> Secure hosting, SSL, and ongoing maintenance</li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-mint"></span> Straightforward local support</li>
+          </ul>
+        </div>
+        <aside class="reveal rounded-3xl border border-brand/40 bg-gradient-to-b from-panelSoft to-panel p-8 shadow-glow">
+          <p class="text-sm font-semibold uppercase tracking-wide text-brand">SiteSimple Plan</p>
+          <div class="mt-3 flex items-end gap-1">
+            <span class="text-5xl font-extrabold text-white">$29</span>
+            <span class="pb-2 text-lg text-slate-300">/month</span>
+          </div>
+          <p class="mt-4 text-sm text-slate-300">No hidden extras. Cancel any time.</p>
+          <a href="/signup.html" class="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-brand px-5 py-3 font-semibold text-ink transition hover:bg-mint">Sign up now</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how" class="bg-panel/45 px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal mb-10 text-center">
+          <h2 class="text-3xl font-bold sm:text-4xl">How it works</h2>
+          <p class="mt-3 text-slate-300">A clear, low-friction process from first message to launch.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="lift reveal rounded-2xl border border-borderSoft bg-panelSoft p-6">
+            <span class="inline-grid h-10 w-10 place-items-center rounded-lg bg-brand/20 font-bold text-brand">1</span>
+            <h3 class="mt-4 text-xl font-bold">Share your current site</h3>
+            <p class="mt-2 text-slate-300">Send your existing URL and tell us your priorities: more trust, more calls, better mobile experience.</p>
+          </article>
+          <article class="lift reveal rounded-2xl border border-borderSoft bg-panelSoft p-6">
+            <span class="inline-grid h-10 w-10 place-items-center rounded-lg bg-brand/20 font-bold text-brand">2</span>
+            <h3 class="mt-4 text-xl font-bold">Review the redesign direction</h3>
+            <p class="mt-2 text-slate-300">We shape a modern layout and messaging structure to match your business and audience.</p>
+          </article>
+          <article class="lift reveal rounded-2xl border border-borderSoft bg-panelSoft p-6">
+            <span class="inline-grid h-10 w-10 place-items-center rounded-lg bg-brand/20 font-bold text-brand">3</span>
+            <h3 class="mt-4 text-xl font-bold">Launch and ongoing care</h3>
+            <p class="mt-2 text-slate-300">Once approved, we take care of hosting, security, and updates so your site keeps performing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl rounded-3xl border border-borderSoft bg-panel p-6 shadow-float sm:p-8">
+        <div class="reveal mb-7 text-center">
+          <h2 class="text-3xl font-bold sm:text-4xl">Contact us</h2>
+          <p class="mt-3 text-slate-300">Tell us about your business and current website. We'll follow up at <a class="text-brand hover:text-mint" href="mailto:hello@sitesimple.au">hello@sitesimple.au</a>.</p>
+        </div>
+        <form class="reveal grid gap-4 sm:grid-cols-2" action="#" method="post">
+          <label class="block text-sm sm:col-span-1">
+            <span class="mb-2 block text-slate-300">Your name</span>
+            <input required type="text" name="name" class="w-full rounded-lg border border-borderSoft bg-ink px-4 py-3 text-white outline-none transition focus:border-brand" />
+          </label>
+          <label class="block text-sm sm:col-span-1">
+            <span class="mb-2 block text-slate-300">Business name</span>
+            <input required type="text" name="business" class="w-full rounded-lg border border-borderSoft bg-ink px-4 py-3 text-white outline-none transition focus:border-brand" />
+          </label>
+          <label class="block text-sm sm:col-span-1">
+            <span class="mb-2 block text-slate-300">Email</span>
+            <input required type="email" name="email" class="w-full rounded-lg border border-borderSoft bg-ink px-4 py-3 text-white outline-none transition focus:border-brand" />
+          </label>
+          <label class="block text-sm sm:col-span-1">
+            <span class="mb-2 block text-slate-300">Current website</span>
+            <input type="url" name="website" placeholder="https://" class="w-full rounded-lg border border-borderSoft bg-ink px-4 py-3 text-white outline-none transition focus:border-brand" />
+          </label>
+          <label class="block text-sm sm:col-span-2">
+            <span class="mb-2 block text-slate-300">What would you like improved?</span>
+            <textarea required name="message" rows="4" class="w-full rounded-lg border border-borderSoft bg-ink px-4 py-3 text-white outline-none transition focus:border-brand"></textarea>
+          </label>
+          <div class="sm:col-span-2">
+            <button type="submit" class="w-full rounded-xl bg-gradient-to-r from-brand to-brandDeep px-5 py-3 font-semibold text-white transition hover:brightness-110">Send enquiry</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-borderSoft/70 bg-ink px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center gap-2">
+        <img src="/sitesimple-icon.png" alt="SiteSimple" class="h-7 w-7 rounded-md">
+        <span class="font-semibold text-slate-200">SiteSimple</span>
+      </div>
+      <div>
+        <a class="transition hover:text-white" href="mailto:hello@sitesimple.au">hello@sitesimple.au</a>
+      </div>
+      <div>ABN 48 859 867 130</div>
+    </div>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach((el, i) => {
+      el.style.transitionDelay = `${Math.min(i * 45, 260)}ms`;
+      revealObserver.observe(el);
+    });
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      const original = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Sending...';
+      setTimeout(() => {
+        button.textContent = 'Message sent';
+        button.classList.remove('from-brand', 'to-brandDeep');
+        button.classList.add('bg-mint', 'text-ink');
+        setTimeout(() => {
+          button.textContent = original;
+          button.disabled = false;
+          button.classList.remove('bg-mint', 'text-ink');
+          button.classList.add('from-brand', 'to-brandDeep');
+          form.reset();
+        }, 1800);
+      }, 900);
+    });
+  </script>
+</body>
+</html>

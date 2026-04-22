@@ -1,0 +1,1 @@
+> **Note:** Updated email templates are now in `projects/sitesimple-studio/email-templates/`. This file is kept for reference only.
