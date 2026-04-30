@@ -308,13 +308,26 @@
       try {
         const slug = new URLSearchParams(window.location.search).get('site');
         if (!slug) return;
-        const name = siteMap[slug.toLowerCase()];
-        if (!name) return;
-        const el = document.getElementById('business-name');
-        if (el) {
-          el.textContent = name;
+        const slugLower = slug.toLowerCase();
+        const name = siteMap[slugLower];
+        if (name) {
+          const el = document.getElementById('business-name');
+          if (el) {
+            el.textContent = name;
+          }
+          document.title = 'Sign up · ' + name + ' | SiteSimple';
         }
-        document.title = 'Sign up · ' + name + ' | SiteSimple';
+        // Append the slug as Stripe's client_reference_id so we can tell which
+        // demo a payment came from. Works on every Stripe Payment Link without
+        // any Stripe-side configuration. Only appended when the slug looks like
+        // one of ours (defensive against weird query strings).
+        if (/^[a-z0-9-]{1,40}$/.test(slugLower)) {
+          document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach(function (a) {
+            const url = new URL(a.href);
+            url.searchParams.set('client_reference_id', slugLower);
+            a.href = url.toString();
+          });
+        }
       } catch (e) { /* silent fallback */ }
     })();
 
