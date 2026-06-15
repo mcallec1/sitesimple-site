@@ -94,6 +94,38 @@
                         radial-gradient(circle at 70% 75%, rgba(56, 232, 182, 0.20), transparent 55%), 
                         #131D34;
         }
+
+        .proof-window {
+            height: clamp(300px, 30vw, 460px);
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .proof-window img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transform: translateY(0);
+            transition: transform var(--scroll-duration, 8s) cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        .proof-window.is-ready:hover img,
+        .proof-window.is-ready:focus-within img {
+            transform: translateY(calc(-1 * var(--scroll-distance, 0px)));
+        }
+
+        @media (max-width: 640px) {
+            .proof-window {
+                height: 230px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .proof-window img {
+                transition: none;
+            }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-brand/30 selection:text-brand">
@@ -131,15 +163,12 @@
                     A new website for your small business. <span class="text-mint">$29 a month.</span>
                 </h1>
                 <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed mx-auto max-w-xl">
-                    We rebuild outdated sites using your existing content, and run them on fast, reliable hosting. No upfront cost, no contracts, cancel anytime.
+                    Send us your current website. We’ll create a modern version for you to review, with no upfront cost and nothing to pay unless you keep it.
                 </p>
                 
-                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <a href="#demos" class="w-full sm:w-auto bg-gradient-to-r from-brand to-brandDeep px-6 py-3 rounded-xl text-sm font-semibold text-white shadow-glow transition hover:brightness-110 text-center">
-                        Browse a live demo
-                    </a>
-                    <a href="#how-it-works" class="text-slate-300 hover:text-mint transition text-sm font-semibold inline-flex items-center gap-2">
-                        How it works <i class="fa-solid fa-arrow-right text-xs"></i>
+                <div class="mt-10 flex items-center justify-center">
+                    <a href="/signup.html" class="w-full sm:w-auto bg-gradient-to-r from-brand to-brandDeep px-6 py-3 rounded-xl text-sm font-semibold text-white shadow-glow transition hover:brightness-110 text-center">
+                        Submit your current website
                     </a>
                 </div>
 
@@ -167,7 +196,7 @@
                     We build it first. You only pay if you keep it.
                 </h2>
                 <p class="mt-6 text-lg text-slate-300 leading-relaxed mx-auto max-w-2xl reveal">
-                    We find small businesses with outdated websites, rebuild them with your own content, and send you a link to view the result. There's no charge until you decide to make it yours. If you don't, no hard feelings, nothing is lost.
+                    We start with your current website, then improve the structure, wording and presentation so it is clearer, more professional, and better represents your business. You review the finished version before deciding whether to keep it.
                 </p>
 
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
@@ -175,9 +204,9 @@
                         <div class="rounded-lg bg-brand/15 h-10 w-10 grid place-items-center">
                             <i class="fa-solid fa-bolt text-brand"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Live in 24 hours</h3>
+                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Easy to go live</h3>
                         <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                            Once you sign up, we point your domain at the new site within a day.
+                            When you decide to keep the site, we help connect your domain and get everything ready to launch.
                         </p>
                     </div>
                     <div class="reveal">
@@ -186,79 +215,276 @@
                         </div>
                         <h3 class="text-lg font-semibold text-slate-100 mt-4">Changes included</h3>
                         <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                            Want a section reworded or a new page added? Email us, it's part of the price.
+                            Need wording adjusted or a section updated? Send it through and we’ll take care of it as part of your subscription.
                         </p>
                     </div>
                     <div class="reveal">
                         <div class="rounded-lg bg-brand/15 h-10 w-10 grid place-items-center">
                             <i class="fa-solid fa-shield-halved text-brand"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Hosting included</h3>
+                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Hosting and support included</h3>
                         <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                            Fast, reliable, secure. We handle SSL, uptime, and updates.
+                            Your site runs on fast, secure hosting with SSL, uptime monitoring and ongoing updates included.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Live Demos -->
+        <!-- 4. Before and After Examples -->
         <section id="demos" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center reveal">
                     <span class="text-xs font-bold uppercase tracking-widest text-mint">Real Examples</span>
                     <h2 class="mt-4 text-4xl lg:text-5xl font-bold tracking-tight text-slate-100 leading-tight">
-                        Browse two live demos.
+                        See what changes.
                     </h2>
                     <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">
-                        Click any demo below to see exactly what a SiteSimple build looks like in production. Both are live, real Australian small businesses we've rebuilt.
+                        Ten real before and after examples, shown side by side. Hover over a screenshot to preview more of the page.
                     </p>
                 </div>
 
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    <!-- Card 1 -->
-                    <a href="https://dttc.sitesimple.au" target="_blank" rel="noopener" class="group block reveal">
-                        <div class="rounded-2xl border border-borderSoft bg-panel shadow-float transition duration-300 hover:border-mint/40 hover:-translate-y-1 overflow-hidden">
-                            <div class="aspect-video overflow-hidden border-b border-borderSoft">
-                                <img src="/portfolio/dttc.png" alt="Dressed to the Canines website" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                <div class="mt-14 grid grid-cols-1 gap-6 lg:gap-8">
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">01</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Commercial Road Accounting</h3>
                             </div>
-                            <div class="p-6 lg:p-8">
-                                <span class="text-xs font-semibold uppercase tracking-wide text-mint">Pet Services · Melbourne</span>
-                                <h3 class="text-xl font-bold text-slate-100 mt-2">Dressed to the Canines</h3>
-                                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                                    Premium dog grooming with a calm, considered editorial design that matches their boutique-spa positioning.
-                                </p>
-                                <div class="mt-6 flex items-center justify-between border-t border-borderSoft/50 pt-4">
-                                    <span class="text-sm font-semibold text-mint inline-flex items-center gap-2">
-                                        Visit live demo <i class="fa-solid fa-arrow-right text-xs"></i>
-                                    </span>
-                                    <span class="text-xs text-slate-500 font-mono">dttc.sitesimple.au</span>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Accounting</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-01-commercial-road-accounting-before.jpg" alt="Commercial Road Accounting original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-01-commercial-road-accounting-after-deployed.jpg" alt="Commercial Road Accounting SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </article>
 
-                    <!-- Card 2 -->
-                    <a href="https://mtbarker-psych.sitesimple.au" target="_blank" rel="noopener" class="group block reveal">
-                        <div class="rounded-2xl border border-borderSoft bg-panel shadow-float transition duration-300 hover:border-mint/40 hover:-translate-y-1 overflow-hidden">
-                            <div class="aspect-video overflow-hidden border-b border-borderSoft">
-                                <img src="/portfolio/mtbarker-psych.png" alt="Mt Barker Psychology website" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">02</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Body Dexa Fit</h3>
                             </div>
-                            <div class="p-6 lg:p-8">
-                                <span class="text-xs font-semibold uppercase tracking-wide text-mint">Allied Health · Adelaide Hills</span>
-                                <h3 class="text-xl font-bold text-slate-100 mt-2">Mt Barker Psychology</h3>
-                                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                                    A regional psychology practice with a warm, empathic register. Brings the practitioner's specialist scope to the front.
-                                </p>
-                                <div class="mt-6 flex items-center justify-between border-t border-borderSoft/50 pt-4">
-                                    <span class="text-sm font-semibold text-mint inline-flex items-center gap-2">
-                                        Visit live demo <i class="fa-solid fa-arrow-right text-xs"></i>
-                                    </span>
-                                    <span class="text-xs text-slate-500 font-mono">mtbarker-psych.sitesimple.au</span>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Health and Fitness</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-02-body-dexa-fit-before.jpg" alt="Body Dexa Fit original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-02-body-dexa-fit-after-deployed.jpg" alt="Body Dexa Fit SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </article>
+
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">03</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">BRB Plastering</h3>
+                            </div>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Trades</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-03-brb-plastering-before.jpg" alt="BRB Plastering original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-03-brb-plastering-after-deployed.jpg" alt="BRB Plastering SiteSimple version" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">04</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Dr Tony's</h3>
+                            </div>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Health Clinic</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-04-dr-tonys-before.jpg" alt="Dr Tony's original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-04-dr-tonys-after-deployed.jpg" alt="Dr Tony's SiteSimple version" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">05</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Finance Star</h3>
+                            </div>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Finance</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-05-finance-star-before.jpg" alt="Finance Star original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-05-finance-star-after-deployed.jpg" alt="Finance Star SiteSimple version" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">06</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Finlay Plumbing</h3>
+                            </div>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Plumbing</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-06-finlay-plumbing-before.jpg" alt="Finlay Plumbing original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-06-finlay-plumbing-after-deployed.jpg" alt="Finlay Plumbing SiteSimple version" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">07</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Health &amp; Selina</h3>
+                            </div>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Wellness</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-07-health-and-selina-before.jpg" alt="Health and Selina original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-07-health-and-selina-after-deployed.jpg" alt="Health and Selina SiteSimple version" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">08</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Human Key</h3>
+                            </div>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Consulting</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-08-human-key-before.jpg" alt="Human Key original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-08-human-key-after-deployed.jpg" alt="Human Key SiteSimple version" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">09</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Sampimon</h3>
+                            </div>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Chiropractic</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-09-sampimon-before.jpg" alt="Sampimon original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-09-sampimon-after-deployed.jpg" alt="Sampimon SiteSimple version" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="rounded-2xl border border-borderSoft bg-panel/85 p-3 sm:p-4 shadow-float reveal">
+                        <div class="mb-3 flex items-end justify-between gap-4">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-widest text-mint">10</span>
+                                <h3 class="mt-1 text-xl font-bold text-slate-100">Tails With Tayla</h3>
+                            </div>
+                            <span class="hidden sm:inline text-xs font-semibold text-slate-500">Pet Care</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="proof-window rounded-xl border border-borderSoft">
+                                    <img src="/portfolio/proof/proof-full-10-tails-with-tayla-before.jpg" alt="Tails With Tayla original website" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                    <img src="/portfolio/proof/proof-full-10-tails-with-tayla-after-deployed.jpg" alt="Tails With Tayla SiteSimple version" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
@@ -332,9 +558,9 @@
                     </div>
                     <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-float reveal">
                         <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-brand/20 font-bold text-brand text-base">3</div>
-                        <h3 class="text-xl font-bold text-slate-100 mt-4">Live in 24 hours</h3>
+                        <h3 class="text-xl font-bold text-slate-100 mt-4">Get ready to launch</h3>
                         <p class="text-sm text-slate-300 leading-relaxed mt-2">
-                            We point your existing domain at the new site within a day. We'll walk you through the one-minute DNS step.
+                            We help connect your existing domain, set up hosting and get the new version ready to go live.
                         </p>
                     </div>
                 </div>
@@ -549,6 +775,31 @@
 
             const reveals = document.querySelectorAll('.reveal');
             reveals.forEach(el => observer.observe(el));
+
+            const proofWindows = document.querySelectorAll('.proof-window');
+            const setProofScroll = () => {
+                proofWindows.forEach((windowEl) => {
+                    const image = windowEl.querySelector('img');
+                    if (!image) return;
+
+                    const applyDistance = () => {
+                        const distance = Math.max(0, image.getBoundingClientRect().height - windowEl.clientHeight);
+                        const duration = Math.min(30, Math.max(12, (distance / 80) + 8));
+                        windowEl.style.setProperty('--scroll-distance', `${Math.round(distance)}px`);
+                        windowEl.style.setProperty('--scroll-duration', `${duration.toFixed(1)}s`);
+                        windowEl.classList.toggle('is-ready', distance > 12);
+                    };
+
+                    if (image.complete) {
+                        applyDistance();
+                    } else {
+                        image.addEventListener('load', applyDistance, { once: true });
+                    }
+                });
+            };
+
+            setProofScroll();
+            window.addEventListener('resize', setProofScroll);
         });
     </script>
 </body>
