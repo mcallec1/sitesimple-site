@@ -30,11 +30,12 @@
                         borderSoft: '#273352',
                         brand: '#27C2FF',
                         brandDeep: '#0D87D1',
-                        mint: '#38E8B6'
+                        mint: '#E0A33E'
                     },
                     boxShadow: {
                         float: '0 20px 50px rgba(5, 10, 20, 0.48)',
-                        glow: '0 0 0 1px rgba(39,194,255,0.25), 0 16px 40px rgba(13,135,209,0.35)'
+                        glow: '0 0 0 1px rgba(39,194,255,0.25), 0 16px 40px rgba(13,135,209,0.35)',
+                        gold: '0 0 0 1px rgba(224,163,62,0.30), 0 16px 40px rgba(168,114,26,0.28)'
                     }
                 }
             }
@@ -47,7 +48,7 @@
             color: #f1f5f9; /* text-slate-100 */
         }
 
-        .glow-cyan {
+        .glow-blue {
             position: fixed;
             top: 0;
             right: 0;
@@ -58,13 +59,13 @@
             z-index: 0;
         }
 
-        .glow-mint {
+        .glow-gold-soft {
             position: fixed;
             top: 0;
             left: 0;
             width: 60vw;
             height: 60vh;
-            background: radial-gradient(circle at 5% 10%, rgba(56, 232, 182, 0.11), transparent 40%);
+            background: radial-gradient(circle at 5% 10%, rgba(224, 163, 62, 0.08), transparent 40%);
             pointer-events: none;
             z-index: 0;
         }
@@ -89,9 +90,14 @@
         details summary { list-style: none; }
         details[open] .faq-chevron { transform: rotate(180deg); }
 
+        :focus-visible {
+            outline: 3px solid #27C2FF;
+            outline-offset: 3px;
+        }
+
         .avatar-gradient {
-            background: radial-gradient(circle at 30% 25%, rgba(39, 194, 255, 0.25), transparent 55%), 
-                        radial-gradient(circle at 70% 75%, rgba(56, 232, 182, 0.20), transparent 55%), 
+            background: radial-gradient(circle at 30% 25%, rgba(39, 194, 255, 0.25), transparent 55%),
+                        radial-gradient(circle at 70% 75%, rgba(224, 163, 62, 0.18), transparent 55%),
                         #131D34;
         }
 
@@ -128,20 +134,16 @@
         }
     </style>
 </head>
-<body class="antialiased selection:bg-brand/30 selection:text-brand">
+<body class="antialiased selection:bg-mint selection:text-ink">
 
-    <div class="glow-cyan"></div>
-    <div class="glow-mint"></div>
+    <div class="glow-blue"></div>
+    <div class="glow-gold-soft"></div>
 
     <!-- 1. Sticky Header -->
     <header class="sticky top-0 z-40 w-full bg-ink/90 backdrop-blur border-b border-borderSoft/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[64px] flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-brand to-mint flex items-center justify-center">
-                    <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4v5h5M20 20v-5h-5M20 9A8 8 0 0 0 6.2 4.7M4 15a8 8 0 0 0 13.8 4.3"/>
-                    </svg>
-                </div>
+                <img src="assets/sitesimple-renewal-mark-original.png" alt="" class="h-8 w-8 shrink-0 object-contain" width="32" height="32">
                 <span class="text-xl font-bold tracking-tight text-slate-100">SiteSimple</span>
             </div>
             <a href="/signup.html" class="rounded-lg border border-brand/70 bg-brand/20 px-4 py-2 text-sm font-semibold text-brand transition hover:bg-brand/30">
@@ -163,7 +165,7 @@
                     A new website for your small business. <span class="text-mint">$29 a month.</span>
                 </h1>
                 <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed mx-auto max-w-xl">
-                    Send us your current website. We’ll create a modern version for you to review, with no upfront cost and nothing to pay unless you keep it.
+                    Your website still works. It just looks like it was built in 2011 because it was. Send us the address and we’ll rebuild it, then send it back for you to look at. Keep it or don’t.
                 </p>
                 
                 <div class="mt-10 flex items-center justify-center">
@@ -191,40 +193,40 @@
         <!-- 3. The Pitch -->
         <section class="bg-panel border-y border-borderSoft/40 py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto text-center">
-                <span class="text-xs font-bold uppercase tracking-widest text-brand reveal">Why this works</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-mint reveal">Here’s the deal</span>
                 <h2 class="mt-4 text-4xl lg:text-5xl font-bold tracking-tight text-slate-100 leading-tight max-w-3xl mx-auto reveal">
-                    We build it first. You only pay if you keep it.
+                    We build it first. You decide after.
                 </h2>
                 <p class="mt-6 text-lg text-slate-300 leading-relaxed mx-auto max-w-2xl reveal">
-                    We start with your current website, then improve the structure, wording and presentation so it is clearer, more professional, and better represents your business. You review the finished version before deciding whether to keep it.
+                    Send us your web address. We’ll take it from there, then email you a private link. If you like what you see, keep it. If you don’t, that’s fine too.
                 </p>
 
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
                     <div class="reveal">
-                        <div class="rounded-lg bg-brand/15 h-10 w-10 grid place-items-center">
-                            <i class="fa-solid fa-bolt text-brand"></i>
+                        <div class="rounded-lg bg-mint/15 h-10 w-10 grid place-items-center">
+                            <i class="fa-solid fa-bolt text-mint"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Easy to go live</h3>
+                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Nothing to prepare</h3>
                         <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                            When you decide to keep the site, we help connect your domain and get everything ready to launch.
+                            We work from what’s already on your site. Just send us the address.
                         </p>
                     </div>
                     <div class="reveal">
-                        <div class="rounded-lg bg-brand/15 h-10 w-10 grid place-items-center">
-                            <i class="fa-solid fa-pen-to-square text-brand"></i>
+                        <div class="rounded-lg bg-mint/15 h-10 w-10 grid place-items-center">
+                            <i class="fa-solid fa-pen-to-square text-mint"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Changes included</h3>
+                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Take your time</h3>
                         <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                            Need wording adjusted or a section updated? Send it through and we’ll take care of it as part of your subscription.
+                            We’ll email you a private link. Look at it on your phone, show someone, sleep on it.
                         </p>
                     </div>
                     <div class="reveal">
-                        <div class="rounded-lg bg-brand/15 h-10 w-10 grid place-items-center">
-                            <i class="fa-solid fa-shield-halved text-brand"></i>
+                        <div class="rounded-lg bg-mint/15 h-10 w-10 grid place-items-center">
+                            <i class="fa-solid fa-shield-halved text-mint"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Hosting and support included</h3>
+                        <h3 class="text-lg font-semibold text-slate-100 mt-4">Changes while you decide</h3>
                         <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                            Your site runs on fast, secure hosting with SSL, uptime monitoring and ongoing updates included.
+                            If there’s something you want changed, tell us. It’s all part of the preview.
                         </p>
                     </div>
                 </div>
@@ -237,10 +239,10 @@
                 <div class="text-center reveal">
                     <span class="text-xs font-bold uppercase tracking-widest text-mint">Real Examples</span>
                     <h2 class="mt-4 text-4xl lg:text-5xl font-bold tracking-tight text-slate-100 leading-tight">
-                        See what changes.
+                        See some of the sites we’ve rebuilt
                     </h2>
                     <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">
-                        Ten real before and after examples, shown side by side. Hover over a screenshot to preview more of the page.
+                        Before and after, side by side.
                     </p>
                 </div>
 
@@ -255,14 +257,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-01-commercial-road-accounting-before.jpg" alt="Commercial Road Accounting original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-01-commercial-road-accounting-after-deployed.jpg" alt="Commercial Road Accounting SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -279,14 +281,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-02-body-dexa-fit-before.jpg" alt="Body Dexa Fit original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-02-body-dexa-fit-after-deployed.jpg" alt="Body Dexa Fit SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -303,14 +305,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-03-brb-plastering-before.jpg" alt="BRB Plastering original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-03-brb-plastering-after-deployed.jpg" alt="BRB Plastering SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -327,14 +329,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-04-dr-tonys-before.jpg" alt="Dr Tony's original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-04-dr-tonys-after-deployed.jpg" alt="Dr Tony's SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -351,14 +353,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-05-finance-star-before.jpg" alt="Finance Star original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-05-finance-star-after-deployed.jpg" alt="Finance Star SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -375,14 +377,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-06-finlay-plumbing-before.jpg" alt="Finlay Plumbing original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-06-finlay-plumbing-after-deployed.jpg" alt="Finlay Plumbing SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -399,14 +401,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-07-health-and-selina-before.jpg" alt="Health and Selina original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-07-health-and-selina-after-deployed.jpg" alt="Health and Selina SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -423,14 +425,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-08-human-key-before.jpg" alt="Human Key original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-08-human-key-after-deployed.jpg" alt="Human Key SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -447,14 +449,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-09-sampimon-before.jpg" alt="Sampimon original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-09-sampimon-after-deployed.jpg" alt="Sampimon SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -471,14 +473,14 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-500">Original</div>
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-slate-500/50 bg-slate-800/95 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-100 shadow-sm">Before</div>
                                 <div class="proof-window rounded-xl border border-borderSoft">
                                     <img src="/portfolio/proof/proof-full-10-tails-with-tayla-before.jpg" alt="Tails With Tayla original website" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div>
-                                <div class="mb-2 text-[11px] font-bold uppercase tracking-widest text-mint">SiteSimple version</div>
-                                <div class="proof-window rounded-xl border border-mint/45 shadow-glow">
+                                <div class="mb-3 inline-flex items-center rounded-lg border border-mint/60 bg-mint/15 px-3 py-1.5 text-sm font-extrabold uppercase tracking-[0.16em] text-mint shadow-gold">After</div>
+                                <div class="proof-window rounded-xl border border-mint/45 shadow-gold">
                                     <img src="/portfolio/proof/proof-full-10-tails-with-tayla-after-deployed.jpg" alt="Tails With Tayla SiteSimple version" loading="lazy" decoding="async">
                                 </div>
                             </div>
@@ -489,252 +491,284 @@
             </div>
         </section>
 
-        <!-- 5. The Three Guarantees -->
-        <section class="bg-panel/45 py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center reveal">
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Transparent Pricing</span>
-                    <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-slate-100">
-                        $29 a month. Nothing more, ever.
-                    </h2>
-                </div>
-                
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="text-center reveal">
-                        <div class="mx-auto h-14 w-14 grid place-items-center rounded-full border border-brand/30 bg-gradient-to-br from-brand/25 to-mint/20 shadow-glow">
-                            <i class="fa-solid fa-check text-mint text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-100 mt-5">No setup fee</h3>
-                        <p class="text-sm text-slate-300 mt-2 max-w-xs mx-auto leading-relaxed">
-                            Nothing upfront. Your first $29 is charged when the site is live.
-                        </p>
-                    </div>
-                    <div class="text-center reveal">
-                        <div class="mx-auto h-14 w-14 grid place-items-center rounded-full border border-brand/30 bg-gradient-to-br from-brand/25 to-mint/20 shadow-glow">
-                            <i class="fa-solid fa-check text-mint text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-100 mt-5">No lock-in</h3>
-                        <p class="text-sm text-slate-300 mt-2 max-w-xs mx-auto leading-relaxed">
-                            Month to month. No contracts, no minimum commitment.
-                        </p>
-                    </div>
-                    <div class="text-center reveal">
-                        <div class="mx-auto h-14 w-14 grid place-items-center rounded-full border border-brand/30 bg-gradient-to-br from-brand/25 to-mint/20 shadow-glow">
-                            <i class="fa-solid fa-check text-mint text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-100 mt-5">Cancel anytime</h3>
-                        <p class="text-sm text-slate-300 mt-2 max-w-xs mx-auto leading-relaxed">
-                            Your site stays live until your billing period ends. No penalties.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. How It Works -->
+        <!-- 5. How It Works -->
         <section id="how-it-works" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center reveal">
-                    <span class="text-xs font-bold uppercase tracking-widest text-brand">How it works</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-mint">How it works</span>
                     <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-slate-100">
-                        Three steps from finding us to going live.
+                        Four steps. You decide after you see it.
                     </h2>
                 </div>
 
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-float reveal">
-                        <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-brand/20 font-bold text-brand text-base">1</div>
-                        <h3 class="text-xl font-bold text-slate-100 mt-4">Browse your demo</h3>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-mint/40 hover:shadow-float reveal">
+                        <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-mint/20 font-bold text-mint text-base">1</div>
+                        <h3 class="text-xl font-bold text-slate-100 mt-4">Send us your web address</h3>
                         <p class="text-sm text-slate-300 leading-relaxed mt-2">
-                            We send you a link to a personalised demo of your rebuilt site. Take your time. No pressure, no obligation.
+                            Type it in the box. That’s the whole job on your end. We work from what’s already on your site, so there’s no brief to write and no meeting to sit through.
                         </p>
                     </div>
-                    <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-float reveal">
-                        <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-brand/20 font-bold text-brand text-base">2</div>
-                        <h3 class="text-xl font-bold text-slate-100 mt-4">Sign up if you love it</h3>
+                    <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-mint/40 hover:shadow-float reveal">
+                        <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-mint/20 font-bold text-mint text-base">2</div>
+                        <h3 class="text-xl font-bold text-slate-100 mt-4">We rebuild it</h3>
                         <p class="text-sm text-slate-300 leading-relaxed mt-2">
-                            Click the sign-up button on the demo. Stripe handles the $29 monthly subscription. Cancel anytime.
+                            Same business, same information, same phone number, laid out so a customer on a phone can find what they need. We’ll get in touch if something on the old site looks out of date.
                         </p>
                     </div>
-                    <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-float reveal">
-                        <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-brand/20 font-bold text-brand text-base">3</div>
-                        <h3 class="text-xl font-bold text-slate-100 mt-4">Get ready to launch</h3>
+                    <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-mint/40 hover:shadow-float reveal">
+                        <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-mint/20 font-bold text-mint text-base">3</div>
+                        <h3 class="text-xl font-bold text-slate-100 mt-4">Have a look at it</h3>
                         <p class="text-sm text-slate-300 leading-relaxed mt-2">
-                            We help connect your existing domain, set up hosting and get the new version ready to go live.
+                            We email you a private link. Open it on your phone, show your partner, show the staff, sleep on it. Ask for changes while you’re deciding. That’s included too.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-mint/40 hover:shadow-float reveal">
+                        <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-mint/20 font-bold text-mint text-base">4</div>
+                        <h3 class="text-xl font-bold text-slate-100 mt-4">Keep it, or don’t</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mt-2">
+                            Keep it and we switch your domain over. It’s $29 a month from there. Don’t keep it and that’s completely fine.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. What's Included -->
-        <section class="bg-panel/45 py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto">
-                <div class="rounded-3xl border border-brand/40 bg-gradient-to-b from-panelSoft to-panel p-8 lg:p-10 shadow-glow reveal">
-                    <span class="text-sm font-semibold uppercase tracking-wide text-brand">SiteSimple Plan</span>
-                    <div class="mt-3 flex items-end gap-1">
-                        <span class="text-5xl font-extrabold text-white">$29</span>
-                        <span class="text-lg text-slate-300 pb-2">/month</span>
-                    </div>
-                    <p class="mt-4 text-sm text-slate-300">One predictable monthly fee. No hidden extras.</p>
-                    
-                    <ul class="mt-8 space-y-4">
-                        <li class="flex items-start gap-3 text-slate-200">
-                            <i class="fa-solid fa-check text-mint mt-1"></i>
-                            <span>Custom rebuild from your existing content</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-200">
-                            <i class="fa-solid fa-check text-mint mt-1"></i>
-                            <span>Mobile-responsive, fast, modern</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-200">
-                            <i class="fa-solid fa-check text-mint mt-1"></i>
-                            <span>Secure hosting, SSL, ongoing maintenance</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-200">
-                            <i class="fa-solid fa-check text-mint mt-1"></i>
-                            <span>Unlimited content updates and changes</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-200">
-                            <i class="fa-solid fa-check text-mint mt-1"></i>
-                            <span>Australian-based support, replies same day</span>
-                        </li>
-                    </ul>
+        <!-- 6. Pricing -->
+        <section class="bg-panel py-20 lg:py-28 px-4 sm:px-6 lg:px-8 border-y border-borderSoft">
+            <div class="max-w-7xl mx-auto">
+                <div class="reveal">
+                    <span class="text-sm font-bold uppercase tracking-widest text-mint">What it costs</span>
+                    <h2 class="mt-4 max-w-3xl text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-slate-100">
+                        One price. It only starts <span class="block">if you keep the site.</span>
+                    </h2>
 
-                    <a href="/signup.html" class="mt-10 block rounded-xl bg-gradient-to-r from-brand to-brandDeep px-6 py-4 text-center text-base font-semibold text-white shadow-glow transition hover:brightness-110">
-                        Sign up for $29/month
-                    </a>
+                    <div class="mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-12 lg:gap-16 items-start">
+                        <div>
+                            <div class="text-7xl sm:text-8xl font-extrabold tabular-nums tracking-[-0.055em] leading-none text-mint">$29</div>
+                            <div class="mt-3 text-lg font-bold text-slate-100">per month, including GST</div>
+
+                            <div class="mt-8 border-t border-borderSoft pt-6 max-w-xl">
+                                <h3 class="text-lg font-bold text-slate-100">$0 to see it</h3>
+                                <p class="mt-2 text-sm sm:text-base leading-relaxed text-slate-300">
+                                    The rebuild and changes while you decide cost $0. Walk away and pay nothing. Keep it and your first $29 is charged at signup. Then it’s month to month, with no lock-in, and you can cancel anytime.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-px overflow-hidden rounded-2xl border border-borderSoft bg-borderSoft">
+                                <div class="bg-panelSoft p-5 sm:p-6">
+                                    <h3 class="font-bold text-slate-100">The rebuild</h3>
+                                    <p class="mt-2 text-sm leading-relaxed text-slate-300">A clear, modern, mobile-ready site built from the information already on your current website.</p>
+                                </div>
+                                <div class="bg-panelSoft p-5 sm:p-6">
+                                    <h3 class="font-bold text-slate-100">Hosting and SSL</h3>
+                                    <p class="mt-2 text-sm leading-relaxed text-slate-300">Secure hosting, the SSL certificate and help pointing your existing domain at the new site.</p>
+                                </div>
+                                <div class="bg-panelSoft p-5 sm:p-6">
+                                    <h3 class="font-bold text-slate-100">Technical upkeep</h3>
+                                    <p class="mt-2 text-sm leading-relaxed text-slate-300">Configuration, maintenance, uptime monitoring and the ongoing updates that keep the site running.</p>
+                                </div>
+                                <div class="bg-panelSoft p-5 sm:p-6">
+                                    <h3 class="font-bold text-slate-100">Changes included</h3>
+                                    <p class="mt-2 text-sm leading-relaxed text-slate-300">Email us when wording, photos, sections or the design need changing. There is no hourly rate.</p>
+                                </div>
+                                <div class="bg-panelSoft p-5 sm:p-6">
+                                    <h3 class="font-bold text-slate-100">Your domain stays yours</h3>
+                                    <p class="mt-2 text-sm leading-relaxed text-slate-300">It remains registered in your name. We only point it at the new website when you decide to go live.</p>
+                                </div>
+                                <div class="bg-panelSoft p-5 sm:p-6">
+                                    <h3 class="font-bold text-slate-100">Melbourne support</h3>
+                                    <p class="mt-2 text-sm leading-relaxed text-slate-300">Same-day email replies from Marc, the person who rebuilds and looks after your site.</p>
+                                </div>
+                            </div>
+
+                            <p class="mt-5 text-sm leading-relaxed text-slate-400">
+                                This offer covers rebuilding and running a small-business website from your existing content. If your current site relies on a shop, booking system or another paid service, we will check that with you before you decide.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8. Who I Am -->
-        <section class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto">
-                <div class="rounded-3xl border border-borderSoft bg-panelSoft/70 p-8 lg:p-12 flex flex-col sm:flex-row items-center gap-10 reveal">
-                    <div class="h-32 w-32 flex-shrink-0 rounded-full border border-borderSoft flex items-center justify-center text-3xl font-bold text-brand avatar-gradient">
-                        M
+        <!-- 7. Who I Am -->
+        <section class="py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-[12rem_1fr] gap-5 sm:gap-10 border-y border-borderSoft py-8 sm:py-10 reveal">
+                    <div>
+                        <span class="text-sm font-bold uppercase tracking-widest text-mint">Melbourne, Australia</span>
                     </div>
                     <div>
-                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-100">Hi, I'm Marc.</h2>
-                        <p class="mt-4 text-slate-300 leading-relaxed">
-                            I run SiteSimple out of Melbourne. I rebuild small-business websites that should be better, with no upfront cost and no lock-in, for a fair monthly fee that covers hosting, support, and any changes you need.
-                        </p>
-                        <p class="mt-4 text-slate-300 leading-relaxed">
-                            Got questions before signing up? Email <a href="mailto:hello@sitesimple.au?subject=Question about SiteSimple" class="text-brand hover:text-mint underline decoration-dotted underline-offset-4">hello@sitesimple.au</a>. I read and reply personally.
-                        </p>
+                        <h2 class="max-w-3xl text-2xl sm:text-3xl font-bold leading-snug text-slate-100">Hi, I’m Marc. I run SiteSimple from Melbourne. I’m the person who rebuilds your site, and the person you’ll speak to if anything needs changing.</h2>
+                        <a href="mailto:marc@sitesimple.au" class="mt-4 inline-flex text-sm font-semibold text-brand hover:text-mint transition">marc@sitesimple.au</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 9. FAQ -->
+        <!-- 8. FAQ -->
         <section class="bg-panel/45 py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto">
+            <div class="max-w-4xl mx-auto">
                 <div class="text-center reveal">
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Frequently Asked</span>
-                    <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-slate-100">
-                        Common questions, plain answers.
+                    <span class="text-sm font-bold uppercase tracking-widest text-mint">Fair questions</span>
+                    <h2 class="mt-4 text-4xl lg:text-5xl font-bold tracking-tight text-slate-100">
+                        What’s the catch?
                     </h2>
                 </div>
 
-                <div class="mt-12 space-y-4">
-                    <details class="group rounded-2xl border border-borderSoft bg-panelSoft px-6 py-5 reveal">
-                        <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-100 list-none">
-                            What if I want changes to my site?
-                            <i class="fa-solid fa-chevron-down text-slate-500 text-sm transition-transform duration-300 faq-chevron"></i>
+                <div class="mt-12 border-t border-borderSoft">
+                    <details open class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>Seriously, why would you build it before I pay?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
                         </summary>
-                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-                            Included. Email us what you need and we'll take care of it. There's no extra charge for content updates, new sections, or design tweaks.
-                        </p>
-                    </details>
-                    
-                    <details class="group rounded-2xl border border-borderSoft bg-panelSoft px-6 py-5 reveal">
-                        <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-100 list-none">
-                            Do I need to do anything?
-                            <i class="fa-solid fa-chevron-down text-slate-500 text-sm transition-transform duration-300 faq-chevron"></i>
-                        </summary>
-                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-                            Almost nothing. We handle setup, hosting, configuration, and ongoing maintenance. The only thing we need from you is access to update your domain's DNS so we can point it at the new site. It takes one minute and we walk you through it.
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            Because showing a busy business owner a finished website is easier than asking them to imagine one from a proposal. We work from what is already on your site, send you a private preview and let the work make its own case. If you do not keep it, you pay nothing.
                         </p>
                     </details>
 
-                    <details class="group rounded-2xl border border-borderSoft bg-panelSoft px-6 py-5 reveal">
-                        <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-100 list-none">
-                            What about my domain?
-                            <i class="fa-solid fa-chevron-down text-slate-500 text-sm transition-transform duration-300 faq-chevron"></i>
+                    <details class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>Do I have to change my domain name or email?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
                         </summary>
-                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-                            We'll set up your new site on your existing domain. If you need a new one, we can help with that too.
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            No. Your domain stays the same and remains yours. When you choose to go live, we need access to update the website records in your domain’s DNS so the address points to the new site. We walk you through it, and your existing email setup stays in place.
                         </p>
                     </details>
 
-                    <details class="group rounded-2xl border border-borderSoft bg-panelSoft px-6 py-5 reveal">
-                        <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-100 list-none">
-                            What if I want to cancel?
-                            <i class="fa-solid fa-chevron-down text-slate-500 text-sm transition-transform duration-300 faq-chevron"></i>
+                    <details class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>I already pay someone for hosting. What happens to that?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
                         </summary>
-                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-                            No worries. Your site stays live until the end of your current billing period. No penalties, no clawback, no awkward conversations.
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            Keep the old hosting until the new site is live. Hosting is included in the $29 monthly plan, so you should not need to keep paying for old website hosting afterwards. Before cancelling anything, check whether the old provider also handles your domain or email. We can help you work out what is safe to change.
                         </p>
                     </details>
 
-                    <details class="group rounded-2xl border border-borderSoft bg-panelSoft px-6 py-5 reveal">
-                        <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-100 list-none">
-                            When do I pay and how often?
-                            <i class="fa-solid fa-chevron-down text-slate-500 text-sm transition-transform duration-300 faq-chevron"></i>
+                    <details class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>What if I want changes to the version you send me?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
                         </summary>
-                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-                            Your first $29 is charged at signup via Stripe, then on the same day each month after that. Cancel anytime to stop future charges.
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            Ask for them. Changes while you are deciding are included and do not start the billing. If you keep the site, ongoing wording, section and design changes stay included in the $29 monthly plan. Just email us what needs changing.
                         </p>
                     </details>
 
-                    <details class="group rounded-2xl border border-borderSoft bg-panelSoft px-6 py-5 reveal">
-                        <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-100 list-none">
-                            Who owns the content?
-                            <i class="fa-solid fa-chevron-down text-slate-500 text-sm transition-transform duration-300 faq-chevron"></i>
+                    <details class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>When do I pay and how often?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
                         </summary>
-                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-                            You do, always. If you ever leave, we'll hand over your content so you're never stuck.
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            Nothing is charged while you review the preview. If you choose to keep it, your first $29 is charged when you sign up through Stripe, then on the same date each month. There is no setup fee.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>Can I cancel later?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
+                        </summary>
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            Yes, anytime. There is no contract, minimum commitment or cancellation penalty. Cancelling stops future charges, and your site stays live until the end of the billing period you have already paid for.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>Who owns my domain and site content?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
+                        </summary>
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            You do. Your domain remains registered in your name, and your business content remains yours. If you leave SiteSimple, we hand over the content so you are not stuck.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>Who actually builds it?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
+                        </summary>
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            Marc, in Melbourne. I build and run SiteSimple, and I am the person who reads your emails and looks after your site. Support is by email, with same-day replies.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-borderSoft reveal">
+                        <summary class="flex items-center justify-between gap-8 cursor-pointer py-6 sm:py-7 text-lg sm:text-xl font-bold text-slate-100 list-none">
+                            <span>What if my business is unusual?</span>
+                            <span aria-hidden="true" class="relative h-6 w-6 flex-none">
+                                <span class="absolute left-1/2 top-1/2 h-0.5 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint"></span>
+                                <span class="absolute left-1/2 top-1/2 h-4 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint transition-opacity duration-200 group-open:opacity-0"></span>
+                            </span>
+                        </summary>
+                        <p class="max-w-3xl pb-7 pr-10 text-base text-slate-300 leading-relaxed">
+                            Send us the address anyway. We will look at what your current site does and whether a SiteSimple rebuild is a good fit. If it needs something outside the kind of business sites we build, we will tell you before you pay for anything.
                         </p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- 10. Final CTA -->
+        <!-- 9. Final CTA -->
         <section class="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden relative">
             <div class="max-w-2xl mx-auto reveal">
                 <h2 class="text-4xl lg:text-5xl font-extrabold text-slate-100 leading-tight">
-                    Ready to take a look?
+                    Want to see what we could do with yours?
                 </h2>
                 <p class="mt-6 text-slate-300 text-lg">
-                    Browse a live demo or sign up directly. No commitment either way.
+                    Send us your web address. We’ll take it from there.
                 </p>
-                <div class="mt-12 flex flex-col items-center gap-8">
-                    <a href="/signup.html" class="w-full sm:w-auto rounded-xl bg-gradient-to-r from-brand to-brandDeep px-10 py-5 text-lg font-semibold text-white shadow-glow transition hover:brightness-110">
-                        Sign up for $29/month
-                    </a>
-                    <a href="#demos" class="text-slate-300 hover:text-mint transition text-base font-semibold inline-flex items-center gap-2">
-                        Browse a live demo first <i class="fa-solid fa-arrow-right"></i>
+                <div class="mt-12 flex flex-col items-center">
+                    <a href="mailto:marc@sitesimple.au?subject=Request%20my%20SiteSimple%20preview&amp;body=My%20web%20address%20is%3A%20" class="w-full sm:w-auto rounded-xl bg-gradient-to-r from-brand to-brandDeep px-10 py-5 text-lg font-semibold text-ink shadow-glow transition hover:brightness-110">
+                        Request my preview
                     </a>
                 </div>
                 <div class="mt-10 text-xs text-slate-400 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-lock opacity-50"></i>
-                    Secure payment via Stripe · Cancel anytime
+                    <i class="fa-solid fa-envelope opacity-50"></i>
+                    We’ll email you a private link in a few business days. No upfront cost.
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- 11. Footer -->
+    <!-- 10. Footer -->
     <footer class="bg-ink border-t border-borderSoft/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="flex items-center gap-3">
                     <div class="h-7 w-7 rounded bg-gradient-to-br from-brand to-mint flex items-center justify-center">
-                        <svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="h-4 w-4 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4v5h5M20 20v-5h-5M20 9A8 8 0 0 0 6.2 4.7M4 15a8 8 0 0 0 13.8 4.3"/>
                         </svg>
                     </div>
