@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign up | SiteSimple | $29/month websites for small business</title>
   <meta name="description" content="Get your new professional website live today. $29/month, no upfront cost, cancel anytime." />
+  <link rel="icon" type="image/png" href="/assets/sitesimple-renewal-mark-original.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -21,13 +22,12 @@
             panel: "#0E1526",
             panelSoft: "#131D34",
             borderSoft: "#273352",
-            brand: "#27C2FF",
-            brandDeep: "#0D87D1",
-            mint: "#38E8B6"
+            brand: "#E0A33E",
+            brandDeep: "#CE9435",
+            mint: "#E0A33E"
           },
           boxShadow: {
-            float: "0 20px 50px rgba(5, 10, 20, 0.48)",
-            glow: "0 0 0 1px rgba(39,194,255,0.25), 0 16px 40px rgba(13,135,209,0.35)"
+            float: "0 20px 50px rgba(5, 10, 20, 0.48)"
           }
         }
       }
@@ -38,8 +38,8 @@
     html { scroll-behavior: smooth; }
     body {
       background:
-        radial-gradient(circle at 85% -10%, rgba(39, 194, 255, 0.2), transparent 35%),
-        radial-gradient(circle at 5% 10%, rgba(56, 232, 182, 0.11), transparent 30%),
+        radial-gradient(circle at 85% -10%, rgba(224, 163, 62, 0.10), transparent 35%),
+        radial-gradient(circle at 5% 10%, rgba(224, 163, 62, 0.05), transparent 30%),
         #070b14;
     }
     .reveal {
@@ -57,16 +57,20 @@
     .lift:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 40px rgba(8, 14, 25, 0.55);
-      border-color: rgba(39, 194, 255, 0.55);
+      border-color: rgba(224, 163, 62, 0.42);
     }
     details summary::-webkit-details-marker { display: none; }
     details summary { list-style: none; }
     details[open] .faq-chevron { transform: rotate(180deg); }
     .avatar-placeholder {
       background:
-        radial-gradient(circle at 30% 25%, rgba(39,194,255,0.25), transparent 55%),
-        radial-gradient(circle at 70% 75%, rgba(56,232,182,0.20), transparent 55%),
+        radial-gradient(circle at 30% 25%, rgba(224,163,62,0.12), transparent 55%),
+        radial-gradient(circle at 70% 75%, rgba(224,163,62,0.06), transparent 55%),
         #131D34;
+    }
+    :focus-visible {
+      outline: 3px solid rgba(224, 163, 62, 0.5);
+      outline-offset: 3px;
     }
   </style>
 </head>
@@ -75,12 +79,8 @@
   <!-- Nav -->
   <header class="sticky top-0 z-40 border-b border-borderSoft/60 bg-ink/90 backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-      <a href="/" class="flex items-center gap-3">
-        <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand to-mint text-ink shadow-glow">
-          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h5M20 20v-5h-5M20 9A8 8 0 0 0 6.2 4.7M4 15a8 8 0 0 0 13.8 4.3"/>
-          </svg>
-        </span>
+      <a href="/" class="flex items-center gap-2">
+        <img src="assets/sitesimple-renewal-mark-original.png" alt="" class="h-10 w-10 shrink-0 object-contain" width="40" height="40" />
         <span class="text-xl font-bold tracking-tight">SiteSimple</span>
       </a>
     </div>
@@ -91,7 +91,7 @@
     <!-- Hero (personalised) -->
     <section class="relative px-4 pb-14 pt-14 sm:px-6 lg:px-8 lg:pt-20">
       <div class="mx-auto max-w-3xl text-center reveal">
-        <p class="mb-5 inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-mint/35 bg-mint/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-mint">
+        <p class="mb-5 inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-[rgba(224,163,62,0.42)] bg-transparent px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.07em] text-mint">
           <span>No setup fee</span>
           <span class="text-mint/50">·</span>
           <span>No lock-in</span>
@@ -104,7 +104,7 @@
         <p class="mt-6 mx-auto max-w-xl text-base text-slate-300 sm:text-lg leading-relaxed">
           Click below to sign up. We'll have you live within 24 hours.
         </p>
-        <a href="https://buy.stripe.com/7sY8wQgyfbgb2fCfQH4Vy00" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand to-brandDeep px-8 py-4 text-lg font-semibold text-white shadow-glow transition hover:brightness-110">
+        <a href="https://buy.stripe.com/7sY8wQgyfbgb2fCfQH4Vy00" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#E0A33E] px-8 py-4 text-lg font-semibold text-[#14100A] shadow-none transition hover:bg-[#CE9435]">
             Sign up for $29/month
         </a>
         <p class="mt-4 text-sm text-slate-400">
@@ -150,7 +150,7 @@
         </div>
         <div class="reveal grid gap-12 md:grid-cols-3 text-center">
           <div>
-            <div class="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-full border border-brand/30 bg-gradient-to-br from-brand/25 to-mint/20 shadow-glow">
+            <div class="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-full border border-mint/30 bg-mint/10 shadow-none">
               <svg class="h-7 w-7 text-mint" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
@@ -159,7 +159,7 @@
             <p class="mt-3 text-sm text-slate-300 leading-relaxed max-w-xs mx-auto">Nothing upfront. Your first $29 is charged when the site is live.</p>
           </div>
           <div>
-            <div class="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-full border border-brand/30 bg-gradient-to-br from-brand/25 to-mint/20 shadow-glow">
+            <div class="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-full border border-mint/30 bg-mint/10 shadow-none">
               <svg class="h-7 w-7 text-mint" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
@@ -168,7 +168,7 @@
             <p class="mt-3 text-sm text-slate-300 leading-relaxed max-w-xs mx-auto">Month to month. No contracts, no minimum commitment.</p>
           </div>
           <div>
-            <div class="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-full border border-brand/30 bg-gradient-to-br from-brand/25 to-mint/20 shadow-glow">
+            <div class="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-full border border-mint/30 bg-mint/10 shadow-none">
               <svg class="h-7 w-7 text-mint" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
@@ -209,7 +209,7 @@
       <div class="mx-auto max-w-2xl text-center reveal">
         <h2 class="text-3xl font-bold sm:text-4xl">Ready to go live?</h2>
         <p class="mt-4 text-slate-300">One click below. We'll take it from there.</p>
-        <a href="https://buy.stripe.com/7sY8wQgyfbgb2fCfQH4Vy00" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand to-brandDeep px-10 py-5 text-lg font-semibold text-white shadow-glow transition hover:brightness-110">
+        <a href="https://buy.stripe.com/7sY8wQgyfbgb2fCfQH4Vy00" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#E0A33E] px-10 py-5 text-lg font-semibold text-[#14100A] shadow-none transition hover:bg-[#CE9435]">
           Sign up for $29/month
         </a>
         <p class="mt-4 text-sm text-slate-400 flex items-center justify-center gap-2">
@@ -278,11 +278,7 @@
   <footer class="border-t border-borderSoft/70 bg-ink px-4 py-8 sm:px-6 lg:px-8">
     <div class="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
       <div class="flex items-center gap-2">
-        <span class="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-brand to-mint text-ink">
-          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h5M20 20v-5h-5M20 9A8 8 0 0 0 6.2 4.7M4 15a8 8 0 0 0 13.8 4.3"/>
-          </svg>
-        </span>
+        <img src="assets/sitesimple-renewal-mark-original.png" alt="" class="h-7 w-7 shrink-0 object-contain" width="28" height="28" />
         <span class="font-semibold text-slate-200">SiteSimple</span>
       </div>
       <div>Melbourne-based web development for small business</div>
@@ -302,7 +298,11 @@
       'rma': 'Reliable Melbourne Accountants',
       'asp': 'Athlete Sports Performance',
       'bodydexafit': 'BodyDexaFit',
-      'sharpastax': 'Sharp As Tax'
+      'sharpastax': 'Sharp As Tax',
+      'allpurposetrees': 'All Purpose Tree Services',
+      'arborcare': 'Arborcare Tree & Garden Solutions',
+      'arborcare-solutions': 'Arborcare Tree & Garden Solutions',
+      'aims': 'AIM S Australia'
     };
     (function personaliseHero() {
       try {

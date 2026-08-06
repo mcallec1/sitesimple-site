@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SiteSimple | Modern Websites for Australian Small Business</title>
     <meta name="description" content="We rebuild outdated websites for free. Keep it for $29/month. No upfront cost, no contracts, cancel anytime.">
+    <link rel="icon" type="image/png" href="/assets/sitesimple-renewal-mark-original.png">
     
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,13 +29,12 @@
                         panel: '#0E1526',
                         panelSoft: '#131D34',
                         borderSoft: '#273352',
-                        brand: '#27C2FF',
-                        brandDeep: '#0D87D1',
+                        brand: '#E0A33E',
+                        brandDeep: '#CE9435',
                         mint: '#E0A33E'
                     },
                     boxShadow: {
                         float: '0 20px 50px rgba(5, 10, 20, 0.48)',
-                        glow: '0 0 0 1px rgba(39,194,255,0.25), 0 16px 40px rgba(13,135,209,0.35)',
                         gold: '0 0 0 1px rgba(224,163,62,0.30), 0 16px 40px rgba(168,114,26,0.28)'
                     }
                 }
@@ -48,13 +48,13 @@
             color: #f1f5f9; /* text-slate-100 */
         }
 
-        .glow-blue {
+        .glow-warm {
             position: fixed;
             top: 0;
             right: 0;
             width: 70vw;
             height: 70vh;
-            background: radial-gradient(circle at 85% 0%, rgba(39, 194, 255, 0.20), transparent 45%);
+            background: radial-gradient(circle at 85% 0%, rgba(224, 163, 62, 0.10), transparent 45%);
             pointer-events: none;
             z-index: 0;
         }
@@ -65,7 +65,7 @@
             left: 0;
             width: 60vw;
             height: 60vh;
-            background: radial-gradient(circle at 5% 10%, rgba(224, 163, 62, 0.08), transparent 40%);
+            background: radial-gradient(circle at 5% 10%, rgba(224, 163, 62, 0.05), transparent 40%);
             pointer-events: none;
             z-index: 0;
         }
@@ -91,13 +91,13 @@
         details[open] .faq-chevron { transform: rotate(180deg); }
 
         :focus-visible {
-            outline: 3px solid #27C2FF;
+            outline: 3px solid rgba(224, 163, 62, 0.5);
             outline-offset: 3px;
         }
 
         .avatar-gradient {
-            background: radial-gradient(circle at 30% 25%, rgba(39, 194, 255, 0.25), transparent 55%),
-                        radial-gradient(circle at 70% 75%, rgba(224, 163, 62, 0.18), transparent 55%),
+            background: radial-gradient(circle at 30% 25%, rgba(224, 163, 62, 0.12), transparent 55%),
+                        radial-gradient(circle at 70% 75%, rgba(224, 163, 62, 0.06), transparent 55%),
                         #131D34;
         }
 
@@ -132,23 +132,218 @@
                 transition: none;
             }
         }
+
+        .request-modal[hidden] { display: none; }
+        .request-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: grid;
+            place-items: center;
+            padding: 1.25rem;
+        }
+        .request-modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(3, 7, 15, 0.82);
+            backdrop-filter: blur(10px);
+        }
+        .request-modal__panel {
+            position: relative;
+            width: min(100%, 44rem);
+            max-height: min(90vh, 54rem);
+            overflow-y: auto;
+            border: 1px solid rgba(224, 163, 62, 0.3);
+            border-radius: 1.5rem;
+            background: linear-gradient(145deg, rgba(19, 29, 52, 0.99), rgba(7, 11, 20, 0.99));
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.03);
+        }
+        .request-modal__close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: grid;
+            place-items: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            border: 1px solid #273352;
+            border-radius: 999px;
+            color: #cbd5e1;
+            background: rgba(14, 21, 38, 0.85);
+            transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+        }
+        .request-modal__close:hover {
+            border-color: rgba(224, 163, 62, 0.7);
+            color: #fff;
+            background: #131d34;
+        }
+        .request-modal__content { padding: 2.25rem; }
+        .request-modal__intro { padding-right: 3.5rem; }
+        .request-modal__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: #e0a33e;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .request-modal__eyebrow::before {
+            content: '';
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 999px;
+            background: #e0a33e;
+            box-shadow: 0 0 0 5px rgba(224, 163, 62, 0.12);
+        }
+        .request-modal__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.75rem;
+        }
+        .request-field--wide { grid-column: 1 / -1; }
+        .request-field label {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        .request-field__status {
+            color: #94a3b8;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .request-field input,
+        .request-field textarea {
+            width: 100%;
+            border: 1px solid #334261;
+            border-radius: 0.75rem;
+            background: rgba(7, 11, 20, 0.72);
+            color: #f8fafc;
+            font: inherit;
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: 0.875rem 1rem;
+            transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        }
+        .request-field textarea { min-height: 7rem; resize: vertical; }
+        .request-field input::placeholder,
+        .request-field textarea::placeholder { color: #64748b; }
+        .request-field input:focus,
+        .request-field textarea:focus {
+            border-color: #e0a33e;
+            background: #070b14;
+            box-shadow: 0 0 0 3px rgba(224, 163, 62, 0.5);
+            outline: none;
+        }
+        .request-field input[aria-invalid="true"],
+        .request-field textarea[aria-invalid="true"] { border-color: #e0a33e; }
+        .request-field__error {
+            min-height: 1.1rem;
+            margin-top: 0.35rem;
+            color: #e0a33e;
+            font-size: 0.75rem;
+        }
+        .request-modal__actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+        .request-modal__submit {
+            flex: none;
+            border-radius: 0.75rem;
+            background: #e0a33e;
+            color: #14100a;
+            padding: 0.9rem 1.35rem;
+            font-weight: 700;
+            box-shadow: none;
+            transition: background-color 160ms ease, transform 160ms ease;
+        }
+        .request-modal__submit:hover { background: #ce9435; transform: translateY(-1px); }
+        .request-modal__submit:disabled { cursor: wait; opacity: 0.75; transform: none; }
+        .request-modal__form-note {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+        .request-modal__status {
+            min-height: 1.25rem;
+            margin-top: 0.75rem;
+            color: #e0a33e;
+            font-size: 0.8rem;
+        }
+        .request-modal__success {
+            min-height: 25rem;
+            display: grid;
+            align-content: center;
+            padding: 3rem;
+            text-align: center;
+        }
+        .request-modal__success-icon {
+            display: grid;
+            place-items: center;
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 1.5rem;
+            border: 1px solid rgba(224, 163, 62, 0.45);
+            border-radius: 999px;
+            color: #e0a33e;
+            background: rgba(224, 163, 62, 0.12);
+            font-size: 1.4rem;
+        }
+        .request-honeypot {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0) !important;
+            white-space: nowrap !important;
+        }
+        body.modal-open { overflow: hidden; }
+        @media (max-width: 640px) {
+            .request-modal { align-items: end; padding: 0; }
+            .request-modal__panel {
+                width: 100%;
+                max-height: 96dvh;
+                border-right: 0;
+                border-bottom: 0;
+                border-left: 0;
+                border-radius: 1.5rem 1.5rem 0 0;
+            }
+            .request-modal__content { padding: 1.5rem 1.25rem max(1.5rem, env(safe-area-inset-bottom)); }
+            .request-modal__intro { padding-right: 3rem; }
+            .request-modal__grid { grid-template-columns: 1fr; }
+            .request-field--wide { grid-column: auto; }
+            .request-modal__actions { align-items: stretch; flex-direction: column; }
+            .request-modal__submit { width: 100%; }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-mint selection:text-ink">
 
-    <div class="glow-blue"></div>
+    <div class="glow-warm"></div>
     <div class="glow-gold-soft"></div>
 
     <!-- 1. Sticky Header -->
     <header class="sticky top-0 z-40 w-full bg-ink/90 backdrop-blur border-b border-borderSoft/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[64px] flex items-center justify-between">
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
                 <img src="assets/sitesimple-renewal-mark-original.png" alt="" class="h-8 w-8 shrink-0 object-contain" width="32" height="32">
                 <span class="text-xl font-bold tracking-tight text-slate-100">SiteSimple</span>
             </div>
-            <a href="/signup.html" class="rounded-lg border border-brand/70 bg-brand/20 px-4 py-2 text-sm font-semibold text-brand transition hover:bg-brand/30">
-                Sign up for $29/mo
-            </a>
+            <button type="button" data-request-modal-trigger class="rounded-lg border border-[rgba(255,255,255,0.22)] bg-transparent px-4 py-2 text-sm font-semibold text-[#F4F7FA] transition hover:bg-[rgba(255,255,255,0.06)]">
+                Send us your website
+            </button>
         </div>
     </header>
 
@@ -158,21 +353,24 @@
         <section class="relative pt-14 lg:pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div class="absolute inset-0 dot-grid opacity-30 pointer-events-none"></div>
             <div class="max-w-3xl mx-auto text-center reveal">
-                <span class="inline-block rounded-full border border-mint/35 bg-mint/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-mint">
-                    Built for Australian Small Business
+                <span class="inline-block rounded-full border border-[rgba(224,163,62,0.42)] bg-transparent px-3 py-1 text-xs font-semibold uppercase tracking-[0.07em] text-mint">
+                    Based in Melbourne
                 </span>
                 <h1 class="mt-8 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-slate-100">
-                    A new website for your small business. <span class="text-mint">$29 a month.</span>
+                    A new website for your business. <span class="block whitespace-nowrap text-mint sm:inline">$29 a month.</span>
                 </h1>
                 <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed mx-auto max-w-xl">
                     Your website still works. It just looks like it was built in 2011 because it was. Send us the address and we’ll rebuild it, then send it back for you to look at. Keep it or don’t.
                 </p>
                 
-                <div class="mt-10 flex items-center justify-center">
-                    <a href="/signup.html" class="w-full sm:w-auto bg-gradient-to-r from-brand to-brandDeep px-6 py-3 rounded-xl text-sm font-semibold text-white shadow-glow transition hover:brightness-110 text-center">
-                        Submit your current website
-                    </a>
-                </div>
+                <form id="hero-preview-form" class="mt-10 mx-auto flex w-full max-w-xl flex-col gap-3 sm:flex-row" novalidate>
+                    <label for="hero-website" class="sr-only">Your current website address</label>
+                    <input id="hero-website" name="hero-website" type="text" inputmode="url" autocomplete="url" placeholder="yourwebsite.com.au" class="min-w-0 flex-1 rounded-xl border border-borderSoft bg-panel/90 px-4 py-3 text-base text-slate-100 placeholder:text-slate-500 shadow-float transition focus:border-mint focus:outline-none focus:ring-4 focus:ring-[rgba(224,163,62,0.5)]" aria-describedby="hero-website-hint">
+                    <button type="submit" class="rounded-xl bg-[#E0A33E] px-6 py-3 text-sm font-semibold text-[#14100A] shadow-none transition hover:bg-[#CE9435] sm:shrink-0">
+                        Request my preview
+                    </button>
+                </form>
+                <p id="hero-website-hint" class="mt-3 text-xs text-slate-500">Enter your current web address and we’ll carry it into the request.</p>
 
                 <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-slate-400">
                     <div class="flex items-center gap-2">
@@ -513,7 +711,7 @@
                         <div class="inline-grid h-10 w-10 place-items-center rounded-lg bg-mint/20 font-bold text-mint text-base">2</div>
                         <h3 class="text-xl font-bold text-slate-100 mt-4">We rebuild it</h3>
                         <p class="text-sm text-slate-300 leading-relaxed mt-2">
-                            Same business, same information, same phone number, laid out so a customer on a phone can find what they need. We’ll get in touch if something on the old site looks out of date.
+                            We take the useful parts of your current site and rebuild them into something clearer, more polished and easier to trust. If anything looks out of date, we’ll check with you.
                         </p>
                     </div>
                     <div class="rounded-2xl border border-borderSoft bg-panelSoft p-6 transition duration-300 hover:-translate-y-1 hover:border-mint/40 hover:shadow-float reveal">
@@ -749,9 +947,9 @@
                     Send us your web address. We’ll take it from there.
                 </p>
                 <div class="mt-12 flex flex-col items-center">
-                    <a href="mailto:marc@sitesimple.au?subject=Request%20my%20SiteSimple%20preview&amp;body=My%20web%20address%20is%3A%20" class="w-full sm:w-auto rounded-xl bg-gradient-to-r from-brand to-brandDeep px-10 py-5 text-lg font-semibold text-ink shadow-glow transition hover:brightness-110">
+                    <button type="button" data-request-modal-trigger class="w-full sm:w-auto rounded-xl bg-[#E0A33E] px-10 py-5 text-lg font-semibold text-[#14100A] shadow-none transition hover:bg-[#CE9435]">
                         Request my preview
-                    </a>
+                    </button>
                 </div>
                 <div class="mt-10 text-xs text-slate-400 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-envelope opacity-50"></i>
@@ -766,13 +964,9 @@
     <footer class="bg-ink border-t border-borderSoft/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="flex items-center gap-3">
-                    <div class="h-7 w-7 rounded bg-gradient-to-br from-brand to-mint flex items-center justify-center">
-                        <svg class="h-4 w-4 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4v5h5M20 20v-5h-5M20 9A8 8 0 0 0 6.2 4.7M4 15a8 8 0 0 0 13.8 4.3"/>
-                        </svg>
-                    </div>
-                    <span class="text-lg font-bold tracking-tight text-slate-200">SiteSimple</span>
+                <div class="flex items-center gap-2">
+                    <img src="assets/sitesimple-renewal-mark-original.png" alt="" class="h-8 w-8 shrink-0 object-contain" width="32" height="32">
+                    <span class="text-xl font-bold tracking-tight text-slate-100">SiteSimple</span>
                 </div>
                 
                 <p class="text-sm text-slate-400 text-center md:text-left">
@@ -786,6 +980,83 @@
             </div>
         </div>
     </footer>
+
+    <div id="request-modal" class="request-modal" hidden>
+        <div class="request-modal__backdrop" data-request-modal-close aria-hidden="true"></div>
+        <section class="request-modal__panel" role="dialog" aria-modal="true" aria-labelledby="request-modal-title" aria-describedby="request-modal-description" tabindex="-1">
+            <button type="button" class="request-modal__close" data-request-modal-close aria-label="Close request form">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+            <div id="request-form-view" class="request-modal__content">
+                <div class="request-modal__intro">
+                    <span class="request-modal__eyebrow">Your free preview</span>
+                    <h2 id="request-modal-title" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-100 leading-tight">Where should we send your preview?</h2>
+                    <p id="request-modal-description" class="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-slate-300">We’ll use your email address to send you a private link to your rebuilt website. There’s no upfront cost.</p>
+                </div>
+
+                <form id="request-preview-form" novalidate>
+                    <div class="request-honeypot" aria-hidden="true">
+                        <label for="request-company-website">Leave this field blank</label>
+                        <input id="request-company-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="request-modal__grid">
+                        <div class="request-field request-field--wide">
+                            <label for="request-website">
+                                <span>Website address</span>
+                                <span class="request-field__status">Required</span>
+                            </label>
+                            <input id="request-website" name="currentWebsite" type="url" inputmode="url" autocomplete="url" placeholder="https://yourwebsite.com.au" required aria-describedby="request-website-error">
+                            <p id="request-website-error" class="request-field__error" aria-live="polite"></p>
+                        </div>
+
+                        <div class="request-field">
+                            <label for="request-email">
+                                <span>Email address</span>
+                                <span class="request-field__status">Required</span>
+                            </label>
+                            <input id="request-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@yourbusiness.com.au" required aria-describedby="request-email-error">
+                            <p id="request-email-error" class="request-field__error" aria-live="polite"></p>
+                        </div>
+
+                        <div class="request-field">
+                            <label for="request-name">
+                                <span>First name</span>
+                                <span class="request-field__status">Optional</span>
+                            </label>
+                            <input id="request-name" name="firstName" type="text" autocomplete="given-name" placeholder="Marc">
+                            <p class="request-field__error" aria-hidden="true"></p>
+                        </div>
+
+                        <div class="request-field request-field--wide">
+                            <label for="request-improvements">
+                                <span>Anything you’d like improved?</span>
+                                <span class="request-field__status">Optional</span>
+                            </label>
+                            <textarea id="request-improvements" name="improvements" placeholder="For example, make it easier for customers to find your services or contact you."></textarea>
+                            <p class="request-field__error" aria-hidden="true"></p>
+                        </div>
+                    </div>
+
+                    <div class="request-modal__actions">
+                        <button id="request-submit" type="submit" class="request-modal__submit">Request my preview</button>
+                        <p class="request-modal__form-note">We’ll email you a private link in a few business days. No upfront cost.</p>
+                    </div>
+                    <p id="request-form-status" class="request-modal__status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div id="request-success-view" class="request-modal__success" hidden tabindex="-1">
+                <div class="request-modal__success-icon" aria-hidden="true">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h2 id="request-success-title" class="text-3xl font-extrabold tracking-tight text-slate-100">Your website is on our list.</h2>
+                <p class="mx-auto mt-4 max-w-md text-base leading-relaxed text-slate-300">We’ll take a look and email your private preview link in a few business days. You won’t pay anything unless you decide to keep it.</p>
+                <button type="button" data-request-modal-close class="mx-auto mt-8 rounded-xl border border-[rgba(255,255,255,0.22)] bg-transparent px-5 py-3 font-semibold text-[#F4F7FA] transition hover:bg-[rgba(255,255,255,0.06)]">Back to the page</button>
+            </div>
+        </section>
+    </div>
 
     <!-- Reveal on scroll JS -->
     <script>
@@ -834,6 +1105,166 @@
 
             setProofScroll();
             window.addEventListener('resize', setProofScroll);
+
+            const modal = document.getElementById('request-modal');
+            const modalPanel = modal.querySelector('.request-modal__panel');
+            const requestForm = document.getElementById('request-preview-form');
+            const formView = document.getElementById('request-form-view');
+            const successView = document.getElementById('request-success-view');
+            const heroForm = document.getElementById('hero-preview-form');
+            const heroWebsite = document.getElementById('hero-website');
+            const websiteField = document.getElementById('request-website');
+            const emailField = document.getElementById('request-email');
+            const nameField = document.getElementById('request-name');
+            const improvementsField = document.getElementById('request-improvements');
+            const honeypotField = document.getElementById('request-company-website');
+            const submitButton = document.getElementById('request-submit');
+            const formStatus = document.getElementById('request-form-status');
+            const backgroundRegions = document.querySelectorAll('body > header, body > main, body > footer');
+            let returnFocus = null;
+
+            const normaliseWebsite = (value) => {
+                const trimmed = value.trim();
+                if (!trimmed || /^[a-z][a-z0-9+.-]*:\/\//i.test(trimmed)) return trimmed;
+                return `https://${trimmed}`;
+            };
+
+            const getFocusable = () => Array.from(modalPanel.querySelectorAll(
+                'button:not([disabled]), input:not([disabled]):not([tabindex="-1"]), textarea:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+            )).filter((element) => !element.hidden && element.offsetParent !== null);
+
+            const resetModalView = () => {
+                formView.hidden = false;
+                successView.hidden = true;
+                modalPanel.setAttribute('aria-labelledby', 'request-modal-title');
+                modalPanel.setAttribute('aria-describedby', 'request-modal-description');
+                formStatus.textContent = '';
+            };
+
+            const openRequestModal = (trigger, website = '') => {
+                returnFocus = trigger;
+                resetModalView();
+                if (website) websiteField.value = normaliseWebsite(website);
+                modal.hidden = false;
+                document.body.classList.add('modal-open');
+                backgroundRegions.forEach((region) => { region.inert = true; });
+                requestAnimationFrame(() => {
+                    (websiteField.value ? emailField : websiteField).focus();
+                });
+            };
+
+            const closeRequestModal = () => {
+                modal.hidden = true;
+                document.body.classList.remove('modal-open');
+                backgroundRegions.forEach((region) => { region.inert = false; });
+                if (returnFocus) returnFocus.focus();
+            };
+
+            const validateField = (field) => {
+                const error = document.getElementById(`${field.id}-error`);
+                let message = '';
+                if (field === websiteField) field.value = normaliseWebsite(field.value);
+
+                if (field.validity.valueMissing) {
+                    message = field === websiteField ? 'Enter your current website address.' : 'Enter the email address for your private preview link.';
+                } else if (field.validity.typeMismatch) {
+                    message = field === websiteField ? 'Enter a complete web address, such as yourwebsite.com.au.' : 'Enter a valid email address.';
+                }
+
+                field.setAttribute('aria-invalid', message ? 'true' : 'false');
+                if (error) error.textContent = message;
+                return !message;
+            };
+
+            document.querySelectorAll('[data-request-modal-trigger]').forEach((trigger) => {
+                trigger.addEventListener('click', () => openRequestModal(trigger));
+            });
+
+            heroForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                openRequestModal(heroForm.querySelector('button[type="submit"]'), heroWebsite.value);
+            });
+
+            [websiteField, emailField].forEach((field) => {
+                field.addEventListener('blur', () => validateField(field));
+                field.addEventListener('input', () => {
+                    if (field.getAttribute('aria-invalid') === 'true') validateField(field);
+                });
+            });
+
+            requestForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const fieldsAreValid = [websiteField, emailField].map(validateField).every(Boolean);
+                if (!fieldsAreValid) {
+                    [websiteField, emailField].find((field) => field.getAttribute('aria-invalid') === 'true').focus();
+                    return;
+                }
+
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending…';
+                formStatus.textContent = '';
+
+                try {
+                    const response = await fetch('https://api.sitesimple.au/submit', {
+                        method: 'POST',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify({
+                            siteSlug: 'sitesimple',
+                            business: 'SiteSimple',
+                            page: `${window.location.pathname}${window.location.search}`,
+                            website: honeypotField.value,
+                            fields: {
+                                'Website address': websiteField.value,
+                                'Email address': emailField.value,
+                                'First name': nameField.value.trim(),
+                                'Anything you’d like improved?': improvementsField.value.trim()
+                            }
+                        })
+                    });
+                    const result = await response.json().catch(() => ({}));
+                    if (!response.ok || !result.ok || result.email !== 'sent') {
+                        throw new Error(result.error || 'send failed');
+                    }
+
+                    formView.hidden = true;
+                    successView.hidden = false;
+                    modalPanel.setAttribute('aria-labelledby', 'request-success-title');
+                    modalPanel.removeAttribute('aria-describedby');
+                    requestForm.reset();
+                    successView.focus();
+                } catch (error) {
+                    formStatus.textContent = 'We couldn’t send that just now. Please email marc@sitesimple.au instead.';
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Request my preview';
+                }
+            });
+
+            modal.querySelectorAll('[data-request-modal-close]').forEach((closeControl) => {
+                closeControl.addEventListener('click', closeRequestModal);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (modal.hidden) return;
+                if (event.key === 'Escape') {
+                    event.preventDefault();
+                    closeRequestModal();
+                    return;
+                }
+
+                if (event.key === 'Tab') {
+                    const focusable = getFocusable();
+                    const first = focusable[0];
+                    const last = focusable[focusable.length - 1];
+                    if (event.shiftKey && document.activeElement === first) {
+                        event.preventDefault();
+                        last.focus();
+                    } else if (!event.shiftKey && document.activeElement === last) {
+                        event.preventDefault();
+                        first.focus();
+                    }
+                }
+            });
         });
     </script>
 </body>
